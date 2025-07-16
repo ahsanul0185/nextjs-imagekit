@@ -34,12 +34,12 @@ class ApiClient{
         return response.json()
     }
 
-    async getVideos() {
-        return this.fetch("/videos")
+    async getVideos() : Promise<IVideo[]> {
+        return this.fetch("/video")
     }
 
     async createVideo(videoData : VideoFormData) {
-        return this.fetch("/videos", {
+        return this.fetch("/video", {
             method : "POST",
             body : videoData
         })

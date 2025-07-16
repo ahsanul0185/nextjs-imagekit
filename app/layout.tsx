@@ -33,6 +33,9 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
         </Providers>
+    <footer className="w-full text-center py-4 border-t mt-10 text-sm text-gray-500">
+      © {new Date().getFullYear()} Ahsanul Haque. All rights reserved.
+    </footer>
       </body>
     </html>
   );

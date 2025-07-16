@@ -10,7 +10,7 @@ export interface IVideo {
     title : string;
     description : string;
     videoUrl : string;
-    thumbnailUrl : string;
+    thumbnailUrl? : string;
     controls? : boolean;
     transformation?: {
         height : number;
@@ -36,7 +36,6 @@ const videoSchema = new Schema<IVideo>({
     },
     thumbnailUrl : {
         type : String,
-        required : true
     },
     controls : {
         type : Boolean,
@@ -59,6 +58,7 @@ const videoSchema = new Schema<IVideo>({
     }
 }, {timestamps : true})
 
-const Video = models?.Video || model<IVideo>('video', videoSchema);
+const Video = models.Video || model<IVideo>('Video', videoSchema);
+
 
 export default Video

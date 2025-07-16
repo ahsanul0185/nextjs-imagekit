@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import profileImg from "@/public/profile.png";
 import Image from "next/image";
-import {Plus} from "lucide-react"
+import {Plus, SquarePlay} from "lucide-react"
 
 function Header() {
   const { data: session, status } = useSession();
@@ -28,13 +28,9 @@ function Header() {
   
 
   return (
-    <header className="py-6 px-16 border-b border-b-gray-200/40 flex items-center justify-between">
+    <header className="py-4 md:py-6 px-5 md:px-16 border-b border-b-gray-200/40 flex items-center justify-between">
       <nav>
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-        </ul>
+            <Link href="/" className="flex items-center text-xl gap-1.5"><SquarePlay /> VideoKit</Link>
       </nav>
 
       <div ref={dropdownRef}  className="relative">
