@@ -46,7 +46,6 @@ function Video({
   title,
   description,
   videoUrl,
-  thumbnail,
 }: {
   title: string;
   description: string;

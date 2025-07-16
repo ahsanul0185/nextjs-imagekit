@@ -48,7 +48,7 @@ function Login() {
       </form>
 
       <div className='flex justify-end text-sm mt-3'>
-        <p>Don't have an account? <Link href="/register" className='text-amber-600 hover:underline'>Register</Link></p>
+        <p>Don&apos;t have an account? <Link href="/register" className='text-amber-600 hover:underline'>Register</Link></p>
       </div>
         
     </div>

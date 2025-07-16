@@ -41,8 +41,6 @@ export const FileUploadComponent = ({
 }: FileUploadProps) => {
   const [files, setFiles] = useState<File[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const validateFile = (file: File) => {
@@ -65,7 +63,6 @@ export const FileUploadComponent = ({
 
     if (!file || !validateFile(file)) return;
 
-    setUploading(true);
     setError(null);
 
     try {
@@ -89,10 +86,8 @@ export const FileUploadComponent = ({
 
       onSuccess(uploadResponse.url);
       onProgress && onProgress(100)
-    } catch (error) {
+    } catch (error : unknown) {
       console.log("Upload failed", error);
-    } finally {
-      setUploading(false);
     }
   };
 

@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Header from "./components/Header";
 import Videos from "./components/Videos";
 
 export default function Home() {
