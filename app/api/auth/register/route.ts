@@ -6,6 +6,8 @@ export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
 
+    console.log(email, password)
+
     if (!email || !password) {
       return NextResponse.json(
         { error: "Email and password are required" },
@@ -24,7 +26,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    User.create({
+    await User.create({
       email,
       password,
     });

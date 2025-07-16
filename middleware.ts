@@ -8,17 +8,34 @@ export default withAuth(
   {
     callbacks: {
       authorized({ req, token }) {
-        const {pathname} = req.nextUrl;
+        const { pathname } = req.nextUrl;
 
-        if (pathname.startsWith("/api/auth") || pathname === "/login" || pathname === "/register") {
-            return true
+        // if (
+        //   pathname.startsWith("/api/auth") ||
+        //   pathname === "/login" ||
+        //   pathname === "/register"
+        // ) {
+        //   return true;
+        // }
+
+        // if (pathname === "/" || pathname.startsWith("/api/videos")) {
+        //   return true;
+        // }
+
+        // return !!token;
+
+                // These paths are public
+        if (
+          pathname === "/login" ||
+          pathname === "/register" ||
+          pathname === "/" ||
+          pathname.startsWith("/api/videos")
+        ) {
+          return true;
         }
 
-        if (pathname === "/" || pathname.startsWith("/api/videos")) {
-          return true
-        }
-
-        return !!token
+        // Require token for all other paths
+        return !!token;
       },
     },
   }
@@ -33,6 +50,7 @@ export const config = {
      * - favicon.ico (favicon file)
      * - public folder
      */
-    "/((?!_next/static|_next/image|favicon.ico|public/).*)",
+    // "/((?!_next/static|_next/image|favicon.ico|public/).*)",
+    "/((?!api/auth|_next/static|_next/image|favicon.ico).*)",
   ],
 };
