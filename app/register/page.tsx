@@ -50,9 +50,8 @@ function RegisterPage() {
   };
 
   return (
-    <>
-    <Link href="/" className="absolute top-5 left-5 rounded-full border border-gray-200/40 size-10 hover:border-amber-600 hover:bg-amber-600 duration-200 ease-in-out grid place-items-center"><ArrowLeft /></Link>
-    <div  className='w-full max-w-xl rounded-xl border border-gray-200/40 mx-auto mt-60 p-5'>
+    <div className="px-4">
+    <div  className='w-full max-w-xl rounded-xl border border-gray-200/40 mx-auto my-60 p-5'>
       <h1 className='text-center font-bold text-3xl my-5'>Register</h1>
       <form onSubmit={handleSubmit}  className='mt-4 flex flex-col gap-4'>
         <input
@@ -83,7 +82,7 @@ function RegisterPage() {
         <p>Already have an account? <Link href="/login" className='text-amber-600 hover:underline'>Login</Link></p>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 

@@ -25,9 +25,8 @@ function Login() {
     }
 
   return (
-    <>
-    <Link href="/" className="absolute top-5 left-5 rounded-full border border-gray-200/40 size-10 hover:border-amber-600 hover:bg-amber-600 duration-200 ease-in-out grid place-items-center"><ArrowLeft /></Link>
-    <div className='w-full max-w-xl rounded-xl border border-gray-200/40 mx-auto mt-60 p-5'>
+    <div className='px-4'>
+    <div className='w-full max-w-xl rounded-xl border border-gray-200/40 mx-auto my-60 p-5'>
         <h1 className='text-center font-bold text-3xl my-5'>Login</h1>
       <form onSubmit={handleSubmit} className='mt-4 flex flex-col gap-4'>
         <input
@@ -52,7 +51,7 @@ function Login() {
       </div>
         
     </div>
-    </>
+    </div>
   )
 }
 

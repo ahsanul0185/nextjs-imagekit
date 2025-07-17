@@ -9,13 +9,14 @@ import { IVideo } from "@/models/Video";
 export async function GET() {
     try {
         await connectDB()
-        
+
         const videos = await Video.find({}).sort({createdAt : -1}).lean();
 
         if (!videos || videos.length === 0) {
             return NextResponse.json([] ,{status : 200})
         }
 
+        console.log(videos)
         return NextResponse.json(videos)
 
     } catch (error) {

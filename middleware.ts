@@ -10,32 +10,30 @@ export default withAuth(
       authorized({ req, token }) {
         const { pathname } = req.nextUrl;
 
-        // if (
-        //   pathname.startsWith("/api/auth") ||
-        //   pathname === "/login" ||
-        //   pathname === "/register"
-        // ) {
-        //   return true;
-        // }
-
-        // if (pathname === "/" || pathname.startsWith("/api/videos")) {
-        //   return true;
-        // }
-
-        // return !!token;
-
-                // These paths are public
         if (
+          pathname.startsWith("/api/auth") ||
           pathname === "/login" ||
-          pathname === "/register" ||
-          pathname === "/" ||
-          pathname.startsWith("/api/videos")
+          pathname === "/register"
         ) {
           return true;
         }
 
-        // Require token for all other paths
+        if (pathname === "/" || pathname.startsWith("/api/video")) {
+          return true;
+        }
+
         return !!token;
+
+
+        // if (
+        //   pathname === "/login" ||
+        //   pathname === "/register" ||
+        //   pathname === "/"
+        // ) {
+        //   return true;
+        // }
+
+        // return !!token;
       },
     },
   }
