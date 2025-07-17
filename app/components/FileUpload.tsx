@@ -8,7 +8,7 @@ import { IconUpload } from "@tabler/icons-react";
 import { useDropzone } from "react-dropzone";
 
 interface FileUploadProps {
-  onSuccess: (res: any) => void;
+  onSuccess: (res: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
   onProgress?: (progress: number | null) => void;
   fileType?: "image" | "video";
 }
@@ -85,7 +85,7 @@ export const FileUploadComponent = ({
       });
 
       onSuccess(uploadResponse.url);
-      onProgress && onProgress(100)
+      onProgress?.(100)
     } catch (error : unknown) {
       console.log("Upload failed", error);
     }

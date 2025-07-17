@@ -27,7 +27,7 @@ function UploadVideo() {
       setError(null);
 
       const videoData = {title, description, videoUrl, thumbnailUrl : ""}
-      const res : any = await apiClient.createVideo(videoData)
+      const res = await apiClient.createVideo(videoData)
 
       if (res) {
         router.push("/")
