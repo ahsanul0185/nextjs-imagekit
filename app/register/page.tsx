@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useState } from "react";
-import { ArrowLeft } from "lucide-react";
 
 function RegisterPage() {
   const [email, setEmail] = useState("");

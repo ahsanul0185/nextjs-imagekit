@@ -16,7 +16,6 @@ export async function GET() {
             return NextResponse.json([] ,{status : 200})
         }
 
-        console.log(videos)
         return NextResponse.json(videos)
 
     } catch (error) {
